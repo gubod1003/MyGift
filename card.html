@@ -15,27 +15,41 @@
         </div>
     </header>
 
-    <section class="congratulation">
-        <div class="container">
-            <h1 class="congratulation__title">Вам открытка!</h1>
-            <p class="congratulation__discription">Нажмите на нее, чтобы узнать от кого она и прочитать поздравление</p>
-        </div>
-
-        <div class="card">
-            <div class="card__front">
-                <img class="card__front-image" src="img/Card_04.jpg" alt="Изображение открытки" width="580" height="375">
+    <main class="main-content">
+        <section class="congratulations">
+            <div class="container">
+                <h1 class="congratulation__title">Вам открытка!</h1>
+                <p class="congratulation__discription">Нажмите на нее, чтобы узнать от 
+                    кого она и прочитать поздравление</p>
             </div>
-
-            <div class="card__back">
-                <h1 class="card__back-title"></h1>
-                <span class="card__back-sender">от кого</span>
-                <p class="card__back-sender">Иван Иванов</p>
-                <span class="card__back-receiver">кому</span>
-                <p class="card__back-receiver">Татьяна Айкина</p>
-                <p class="card__back-congratulation">Желаю Счастливого Нового года и Рождества! Будьте здоровы и радостны!</p>
-            </div>
-        </div>
+    
+            <div class="congratulation__card card">
+                <div class="card__inner">
+                    <div class="card__front">
+                        <img class="card__image" src="img/Card_04.jpg" alt="Открытка">
+                    </div>
         
-    </section>
+                    <div class="card__back">
+                        <h1 class="card__title">Поздравление</h1>
+                        <div class="card__contacts">
+                            <p class="card__detail">
+                                <span class="card__subtitle">от кого</span>
+                                <span class="card__from">Иван Иванов</span>
+                            </p>
+                            
+                            <p class="card__detail">
+                                <span class="card__subtitle">кому</span>
+                                <span class="card__to">Татьяна Айкина</span>
+                            </p>
+                        </div>
+                        <p class="card__message">
+                            Желаю Счастливого Нового года и Рождества! <br>
+                            Будьте здоровы и радостны!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
