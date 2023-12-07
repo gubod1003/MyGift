@@ -46,9 +46,9 @@ html {
 }
 
 .container {
-    max-width: 1240px;
+    max-width: 1260px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 40px;
 }
 
 .header {
@@ -62,7 +62,8 @@ html {
 
 /* For gift-page */
 
-.gift {
+.gift, 
+.congratulations {
     padding: 20px 0 80px;
 }
 
@@ -84,11 +85,12 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 30px;
+    gap: 96px;
 }
 
 .gift__card {
     max-width: 580px;
+    width: calc(50% - 16px);
 }
 
 .gift__swiper--card {
@@ -113,6 +115,7 @@ html {
 }
 .gift__form {
     max-width: 480px;
+    width: 100%;
 }
 .form {
     display: grid;
@@ -126,6 +129,7 @@ html {
 .form__label-text {
     display: block;
     margin-bottom: 4px;
+    white-space: nowrap;
 }
 .form__field {
     font: inherit;
@@ -183,34 +187,203 @@ html {
 /* For congratulations-page */
 
 .congratulations {
+    padding-top: 20px;
+    padding-bottom: 145px;
 }
+
 .congratulation__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
 }
+
 .congratulation__discription {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0 0 50px;
 }
+
+.congratulation__title,
+.congratulation__discription {
+    text-align: center;
+}
+
 .congratulation__card {
+    margin: 0 auto;
 }
 .card {
+    position: relative;
+    width: 580px;
+    height: 375px;
+    perspective: 1000px;
 }
+
 .card__inner {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 100%;
+    height: 100%;
 }
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+
 .card__front {
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    inset: 0;
+    overflow: hidden;
 }
 .card__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .card__back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    background-color: #FFF;
+    transform: rotateY(180deg);
+    padding: 32px;
 }
 .card__title {
+    color: #F44;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 24px;
 }
+
 .card__contacts {
+    margin-bottom: 24px;
 }
+
 .card__detail {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 8px;
 }
+
+.card__detail:last-child {
+    margin-bottom: 0;
+}
+
 .card__subtitle {
+    opacity: 0.3;
+    min-width: 54px;
 }
-.card__from {
-}
-.card__to {
-}
+
 .card__message {
+    font-size: 20px;
+    margin: 0;
+}
+
+/*Adaptive*/
+
+@media (width <= 1080px) {
+
+    /* For gift-page */
+
+    .header {
+        padding: 32px 0 16px;
+    }
+
+    .gift {
+        padding: 16px 0 34px;
+    }
+
+    .gift__title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .gift__discription {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .gift__card {
+        max-width: 464px;
+        width: 100%;
+        padding-top: 8px;
+    }
+    
+    .form {
+        row-gap: 12px;
+    }
+
+    /* For congratulations-page */
+
+    .congratulation__title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .congratulation__discription {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (width <= 980px) {
+    
+    /* For gift-page */
+
+    .container {
+        padding: 0 44px;
+    }
+
+    .gift__wrapper {
+        flex-wrap: wrap;
+    }
+
+    .gift__form {
+        max-width: 100%;
+    }
+}
+
+@media (width <= 680px) {
+    /* For congratulations-page */
+
+    .card {
+        width: calc(100% - 46px);
+    }
+
+    .card__title {
+        font-size: 20px;
+    }
+
+    .card__message {
+        font-size: 16px;
+        content: attr(data-text);
+    }
+}
+
+
+
+@media (width <= 580px) {
+    
+    /* For gift-page */
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .header {
+        padding-top: 24px
+    }
+
+    .gift__card-thumb {
+        border-radius: 4px;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
 }
