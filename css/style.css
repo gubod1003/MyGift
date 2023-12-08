@@ -113,6 +113,7 @@ html {
     border-radius: 10px;
     overflow: hidden;
 }
+
 .gift__form {
     max-width: 480px;
     width: 100%;
@@ -215,7 +216,7 @@ html {
 }
 .card {
     position: relative;
-    width: 580px;
+    max-width: 580px;
     height: 375px;
     perspective: 1000px;
 }
@@ -242,6 +243,8 @@ html {
     display: block;
     max-width: 100%;
     height: auto;
+    border-radius: 20px;
+    overflow: hidden;
 }
 .card__back {
     position: absolute;
@@ -352,16 +355,30 @@ html {
     /* For congratulations-page */
 
     .card {
-        width: calc(100% - 46px);
+        /*width: calc(100% - 46px);*/
+        margin-bottom: 20px;
+        height: calc((186 / 288 * 100vw) + 20px);
     }
 
     .card__title {
         font-size: 20px;
+        margin-bottom: 16px;
     }
 
     .card__message {
         font-size: 16px;
-        content: attr(data-text);
+    }
+
+    .card__back {
+        padding: 24px;
+    }
+
+    .card__contacts {
+        margin-bottom: 0;
+    }
+
+    .card__subtitle {
+        opacity: 0.5;
     }
 }
 

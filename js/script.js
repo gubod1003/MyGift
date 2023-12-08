@@ -4,8 +4,8 @@ const swiperThumb = new Swiper(".gift__swiper--thumb", {
     freeMode: true,
     breakepoints: {
         320: {
-            slidesPerView: 5,
             spaceBetween: 12,
+            slidesPerView: 5,
         },
         1141: {
             spaceBetween: 16,
